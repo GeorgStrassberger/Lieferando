@@ -1,0 +1,478 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.d-none {
+    display: none !important;
+}
+
+
+/* ################  Header Start #################*/
+
+header {
+    box-sizing: border-box;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(251, 97, 0);
+    height: 100px;
+    color: white;
+}
+
+.header-address {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: solid 2px white;
+}
+
+.header-address:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logo-lieferando {
+    height: 32px;
+    margin-left: 8px;
+}
+
+.flagg {
+    height: 32px;
+    width: 32px;
+    margin-right: 16px;
+    border: white solid 3px;
+}
+
+
+/* ################  Header End ###################*/
+
+
+/* ################ Main Start #####################*/
+
+main {
+    display: flex;
+}
+
+
+/* ################  Restaurant Start #################*/
+
+.restaurant-frame {
+    width: 70%;
+}
+
+.restauant-image {
+    color: #0a3847;
+    position: relative;
+    background-image: url(./img/pizza.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+.round {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.restauant-logo {
+    position: absolute;
+    left: 50%;
+    bottom: -60px;
+    height: 120px;
+    width: 120px;
+    transform: translateX(-50%);
+    border: dotted gray 1px;
+}
+
+.restaurant-introduce {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.heart {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+.restauant-quality {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.restaurant-info {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.restaurant-slider {
+    background-color: rgb(248, 245, 242);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.restaurant-slider a {
+    color: black;
+    text-decoration: none;
+    padding: 16px;
+}
+
+
+/* ################  Menu Start #################*/
+
+.dishes {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    background-color: rgb(248, 245, 242);
+    color: inherit;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 16px;
+    width: 90%;
+}
+
+.menu-frame {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: min-content;
+}
+
+.menubox {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 16px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.menubox:hover {
+    background-color: rgba(216, 192, 216, 0.5);
+}
+
+.menubox-row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menubox-row-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.accordion {
+    min-width: 90% !important;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: dotted gray 1px;
+}
+
+.accordion:hover {
+    border-radius: 4px;
+    border: solid blue 1px;
+}
+
+.accordion-body {
+    display: flex;
+    justify-content: space-between
+}
+
+.accordion-body img {
+    margin-left: 48px;
+    cursor: pointer;
+}
+
+.accordion-child {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ################  Menu End #################*/
+
+
+/* ################  Restaurant End #################*/
+
+
+/* ################  Cart Start #################*/
+
+.shopping-position {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.shopping-cart-frame {
+    box-sizing: border-box;
+    border-left: 1px solid black;
+    background-color: white;
+    width: 30%;
+    /*position: fixed;
+    right: 0;
+    top: 100px;
+    bottom: 0;*/
+    transition: all 180ms ease-in-out;
+}
+
+.cart-header {
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: gray solid 1px;
+}
+
+.cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    text-align: center;
+}
+
+.cart-empty span {
+    color: rgb(131, 131, 131);
+}
+
+.cart {
+    margin: 8px;
+}
+
+.cart-info-1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.cart-info-1 div span {
+    font-weight: bold;
+}
+
+.cart-info-2 {
+    border-bottom: gray solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+}
+
+.cart-info-2 span {
+    margin-left: 24px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cart-btn img {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    margin: 8px;
+}
+
+.order-img {
+    height: 16px;
+    width: 16px;
+}
+
+.warenbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: thistle;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 8px;
+    height: 60px;
+    width: 90%;
+}
+
+.warenbox img {
+    cursor: pointer;
+}
+
+.cart-min-order {
+    font-size: 0.75rem;
+    padding-top: 8px;
+}
+
+.cart-min-order-price {
+    background-color: #FFECB3;
+    margin: 8px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-min-order-price span {
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-left: 40px;
+}
+
+.cart-min-order-info {
+    padding: 8px;
+}
+
+.pay-btn {
+    margin: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.pay-btn button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    color: #666666;
+    background-color: #EBEBEB;
+    padding: 24px;
+}
+
+.btn-active {
+    background-color: #125FCA !important;
+    color: #FFFFFC !important;
+}
+
+
+/* ############### Rechnung Start ########### */
+
+.cart-bill {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.space-b {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ############### Rechnung Ende ############# */
+
+
+/* ################  Cart End #################*/
+
+
+/* ################ Main End #####################*/
+
+
+/* ################ FOOTER Start #################*/
+
+footer {
+    background-color: rgb(10, 56, 71);
+    color: white;
+    position: absolute;
+    width: 100%;
+}
+
+.footer-link-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-link-list a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+}
+
+.footer-link-list a:hover {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.copyright img {
+    margin-right: 8px;
+}
+
+
+/* ################ FOOTER End #################*/
+
+@media only screen and (max-width:1024px) {
+    .restaurant-frame {
+        width: 100%;
+    }
+    .shopping-cart-frame {
+        display: none;
+    }
+    .botten-btn {
+        box-sizing: border-box;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 5;
+        width: 100%;
+        padding: 0.5rem;
+    }
+    .botten-btn button {
+        background-color: #125FCA;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        height: 80px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: white;
+        text-align: center;
+    }
+    footer {
+        padding-bottom: 100px;
+        margin-bottom: 100px;
+    }
+    .footer-link-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .restaurant-introduce {
+        margin-top: 50px;
+    }
+    .logo-lieferando {
+        display: none;
+    }
+    .header-address {
+        border: none;
+    }
+}

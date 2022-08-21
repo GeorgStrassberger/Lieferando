@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferando</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/cart.svg">
+    <script src="script.js"></script>
+    <!-- BOOTSTRAP -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body onload="init()">
+    <header>
+        <a href="#"><img src="./img/arrow-left-whithe-16px.png"><img class="logo-lieferando" src="./img/logo-lieferando-de.png" alt="logo"></a>
+        <a href="#" class="header-address">Musterstraße 14, 73650 Winterbach</a>
+        <div>
+            <a href="#"><img class="flagg round" src="./img/german-flagg.png" alt="flagg"></a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" color="white" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="restaurant-frame">
+            <div class="restauant-image">
+                <img class="restauant-logo round" src="./img/pizzalogo.png" alt="pizza">
+            </div>
+            <div class="restaurant-introduce">
+                <div>Schlemmer Service</div>
+                <div class="heart" onclick="likeHeart()"><img id="heart" src="./img/favorite-3-24-orange.png" alt=""></div>
+            </div>
+            <div class="restauant-quality">
+                <div class="stars">
+                    <img src="./img/star-orange-16).png" alt="star">
+                    <img src="./img/star-orange-16).png" alt="star">
+                    <img src="./img/star-orange-16).png" alt="star">
+                    <img src="./img/star-orange-16).png" alt="star">
+                    <img src="./img/star-gray-16.png" alt="star">
+                    <a href="#">(Bewertungen)</a>
+                </div>
+            </div>
+            <div class="restaurant-info">
+                Bei diesem Restaurant kannst du Stempel sammeln. Stelle beim Bestellabschluss bitte sicher, dass du dich für unseren Newsletter angemeldet hast, um deine Stempel per E-Mail zu erhalten.
+            </div>
+            <div class="restaurant-slider">
+                <a href="#">Pizza</a>
+                <a href="#">Döner</a>
+                <a href="#">Burger</a>
+                <a href="#">Salte</a>
+                <a href="#">Getränke</a>
+            </div>
+            <!--Bootstrap TEST BOX-->
+            <div class="menu-frame">
+                <div class="dishes">
+                    Unsere Gerichte
+                </div>
+                <div id="accordionExample" class="accordion">
+
+                </div>
+
+            </div>
+        </div>
+
+        <!--WARENKORB-->
+        <!--Leerer Warenkorb-->
+        <div id="shopping-cart-frame" class="shopping-cart-frame">
+            <div class="cart-header">
+                <h6>Warenkorb</h6>
+            </div>
+            <div id="cart-empty" class="cart-empty">
+                <img src="./img/cart-bag-48.png" alt="bag">
+                <h5>Fülle deinen Warenkorb</h5>
+                <span>Füge einige leckere Gerichte aus der Speisekarte hinzu und bestelle dein Essen.</span>
+            </div>
+            <!--Voller Warenkorb-->
+            <div id="cart" class="cart">
+                <!--Später die DIVs Leer mit ID in die selbe reihe wie CARTS setzten -->
+                <!--Hier erstmal nur grafisch disignen-->
+            </div>
+            <!--Bestellsumme-->
+            <div id="cart-bill" class="cart-bill d-none">
+
+                <div class="subtotal-price  space-b">
+                    <span>Zwischensumme</span>
+                    <span id="subtotal-price">0,00 €</span>
+                </div>
+                <div class="delivery-price space-b">
+                    <span>Lieferkosten</span>
+                    <span id="delivery-price">Kostenlos</span>
+                </div>
+                <div class="total-price  space-b">
+                    <strong>Gesamt</strong>
+                    <strong id="total-price">0,00 €</strong>
+                </div>
+            </div>
+            <!--MIN Bestellwert-->
+            <div id="cart-min-order" class="cart-min-order  d-none">
+                <div id="cart-min-order-price" class="cart-min-order-price">
+                    <div>Benötigter Betrag, um den Mindestbestellwert zu erreichen</div>
+                    <span>0,00 €</span>
+                </div>
+
+                <div class="cart-min-order-info">
+                    Leider kannst du noch nicht bestellen. Schlemmer Pizza Service liefert erst ab einem Mindestbestellwert von 12,50 € (exkl. Lieferkosten).
+                </div>
+            </div>
+            <!--Bestell Button-->
+            <div id="pay-btn" class="pay-btn d-none">
+                <button id="warenkorb" type="button" onclick="openCart()">Bezahlen (SUMME €)</button>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <div class="footer-link-list">
+            <a href="#">Ein Restaurant empfehlen</a>
+            <a href="#">Ein Restaurant anmelden</a>
+            <a href="#">Jobs</a>
+            <a href="#">AGB</a>
+            <a href="#">Datenschutzerklärung</a>
+            <a href="#">Impressum</a>
+            <a href="#">Verwendung von Cookies</a>
+            <a href="#">Bug Bounty</a>
+            <a href="#">Ethik-Hotline</a>
+        </div>
+        <div class="copyright">
+            <img src="./img/copyright-16 (1).png" alt="Copyright">
+            <div>2022 Georgrando</div>
+        </div>
+    </footer>
+    <div id="botten-btn" class="botten-btn d-none">
+        <button id="media-btn" onclick="openCart()">Warenkorb (0,00€)</button>
+    </div>
+</body>
+
+</html>
